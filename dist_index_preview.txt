@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect to Google Fonts for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load fonts asynchronously using JavaScript to prevent render blocking -->
+    <script>
+      (function() {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap';
+        document.head.appendChild(link);
+      })();
+    </script>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+    
+    <title>Code Craft Pakistan - Premium Software Agency</title>
+    <meta name="description" content="Code Craft Pakistan delivers world-class software solutions. Web development, mobile apps, and digital transformation." />
+    <meta name="author" content="Code Craft Pakistan" />
+
+    <meta property="og:title" content="Code Craft Pakistan - Premium Software Agency" />
+    <meta property="og:description" content="Code Craft Pakistan delivers world-class software solutions." />
+    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Favicon: load logo from src/Assets via module import so Vite resolves it -->
+    <script type="module" crossorigin src="/Website/assets/index-CDNPl5Oo.js"></script>
+    <link rel="stylesheet" crossorigin href="/Website/assets/index-LDby2eID.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+/* Fonts loaded asynchronously in index.html */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 187 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 213 100% 65%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 187 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(187 100% 50%) 0%, hsl(213 100% 65%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 70%) 100%);
+    --glass-bg: hsla(0, 0%, 100%, 0.03);
+    --glass-border: hsla(0, 0%, 100%, 0.08);
+    --glass-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.4);
+    --glow-primary: 0 0 60px hsla(187, 100%, 50%, 0.3);
+    --glow-secondary: 0 0 60px hsla(213, 100%, 65%, 0.3);
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-glass border border-glass-border backdrop-blur-xl;
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card {
+    @apply bg-glass border border-glass-border backdrop-blur-xl rounded-2xl;
+    box-shadow: var(--glass-shadow);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-bg {
+    background-image: var(--gradient-primary);
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
