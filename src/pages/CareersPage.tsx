@@ -19,6 +19,7 @@ const CareersPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
+    countryCode: '+92',
     email: '',
     role: '',
     experience: '',
@@ -52,6 +53,10 @@ const CareersPage = () => {
     setFormData(prev => ({ ...prev, role: value }));
   };
 
+  const handleCountryCodeChange = (value: string) => {
+    setFormData(prev => ({ ...prev, countryCode: value }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -69,7 +74,7 @@ const CareersPage = () => {
             message: `
             Name: ${formData.name}
             Email: ${formData.email}
-            Contact: ${formData.contact}
+            Contact: ${formData.countryCode} ${formData.contact}
             Post: ${formData.role}
             Experience: ${formData.experience} years
             Details: ${formData.details}
@@ -96,7 +101,7 @@ const CareersPage = () => {
         sendAutoReply().catch(err => console.error("Auto-reply failed:", err));
 
         toast.success("Application submitted successfully! Please check your email for confirmation.");
-        setFormData({ name: '', contact: '', email: '', role: '', experience: '', details: '' });
+        setFormData({ name: '', contact: '', countryCode: '+92', email: '', role: '', experience: '', details: '' });
         setFileName("No file chosen");
         if(fileInputRef.current) fileInputRef.current.value = '';
 
@@ -205,15 +210,32 @@ Location: Abdara road, peshawar, Pakistan`;
 
                                 <div className="space-y-2">
                                     <Label htmlFor="contact" className="text-foreground/80">Contact Number</Label>
-                                    <Input 
-                                        id="contact" 
-                                        type="tel" 
-                                        required 
-                                        placeholder="Enter your phone number" 
-                                        className="bg-muted/50 border-white/10 focus:border-primary/50"
-                                        value={formData.contact}
-                                        onChange={handleChange}
-                                    />
+                                    <div className="flex gap-2">
+                                        <Select value={formData.countryCode} onValueChange={handleCountryCodeChange}>
+                                            <SelectTrigger className="w-[120px] bg-muted/50 border-white/10 focus:border-primary/50">
+                                                <SelectValue placeholder="Code" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="+92">🇵🇰 +92</SelectItem>
+                                                <SelectItem value="+1">🇺🇸 +1</SelectItem>
+                                                <SelectItem value="+44">🇬🇧 +44</SelectItem>
+                                                <SelectItem value="+971">🇦🇪 +971</SelectItem>
+                                                <SelectItem value="+91">🇮🇳 +91</SelectItem>
+                                                <SelectItem value="+61">🇦🇺 +61</SelectItem>
+                                                <SelectItem value="+1">🇨🇦 +1</SelectItem>
+                                                <SelectItem value="+49">🇩🇪 +49</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <Input 
+                                            id="contact" 
+                                            type="tel" 
+                                            required 
+                                            placeholder="300 1234567" 
+                                            className="flex-1 bg-muted/50 border-white/10 focus:border-primary/50"
+                                            value={formData.contact}
+                                            onChange={handleChange}
+                                        />
+                                    </div>
                                 </div>
 
                                 <div className="space-y-2">
