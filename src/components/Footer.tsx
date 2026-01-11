@@ -47,15 +47,15 @@ const Footer = () => {
       { name: 'Career', href: '/careers' },
     ],
     resources: [
-      { name: 'Blog', href: '#' },
-      { name: 'Case Studies', href: '#' },
-      { name: 'Documentation', href: '#' },
-      { name: 'Support', href: '#' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Documentation', href: '/documentation' },
+      { name: 'Support', href: '/support' },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
+      { name: 'Terms of Service', href: '/terms-of-service' },
+      { name: 'Cookie Policy', href: '/cookie-policy' },
     ],
   };
 
@@ -98,8 +98,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <motion.div
-              className="inline-flex items-center gap-2 mb-4"
+              className="inline-flex items-center gap-2 mb-4 cursor-pointer"
               whileHover={{ scale: 1.05 }}
+              onClick={() => {
+                navigate('/');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
             >
               <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center">
                 <img src={logo} alt="Code Craft logo" className="w-full h-full object-cover" />

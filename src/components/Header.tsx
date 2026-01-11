@@ -111,9 +111,13 @@ const Header = () => {
       >
         <div className="container mx-auto flex items-center justify-between">
           <motion.div
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              navigate('/');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           >
             <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center">
               <img src={logo} alt="Code Craft Pakistan logo" className="w-full h-full object-cover" />

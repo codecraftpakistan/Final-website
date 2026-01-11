@@ -167,11 +167,11 @@ Location: Abdara road, peshawar, Pakistan`;
         <section className="relative py-12 lg:py-24 overflow-hidden">
              {/* Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
-            <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[128px]" />
+            <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-primary/10 rounded-full blur-[80px] sm:blur-[100px] lg:blur-[128px]" />
+            <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-secondary/10 rounded-full blur-[80px] sm:blur-[100px] lg:blur-[128px]" />
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-200px)]">
                     {/* Left Column: Text Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -179,7 +179,7 @@ Location: Abdara road, peshawar, Pakistan`;
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="text-center lg:text-left space-y-6"
                     >
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight">
                             <span className="text-primary glow-text">Career</span>
                         </h1>
                         <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed">
@@ -212,7 +212,7 @@ Location: Abdara road, peshawar, Pakistan`;
                                     <Label htmlFor="contact" className="text-foreground/80">Contact Number</Label>
                                     <div className="flex gap-2">
                                         <Select value={formData.countryCode} onValueChange={handleCountryCodeChange}>
-                                            <SelectTrigger className="w-[120px] bg-muted/50 border-white/10 focus:border-primary/50">
+                                            <SelectTrigger className="w-[100px] sm:w-[120px] bg-muted/50 border-white/10 focus:border-primary/50">
                                                 <SelectValue placeholder="Code" />
                                             </SelectTrigger>
                                             <SelectContent>
